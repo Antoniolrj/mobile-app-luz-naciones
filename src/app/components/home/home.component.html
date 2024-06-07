@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{ pageTitle }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-row *ngIf="!postLoaded" class="spinner-container">
+  <ion-col class="spinner-col">
+    <ion-spinner *ngIf="loadingPosts"></ion-spinner>
+  </ion-col>
+</ion-row>
+
+<ion-list *ngIf="postLoaded">
+  <ion-item>
+    <ion-select [(ngModel)]="selectedCategoryId" aria-label="Categories" interface="action-sheet" placeholder="Select category" (ionChange)="onCategoryChange($event)">
+      <ion-select-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-content #postContainer *ngIf="postLoaded">
+  <ion-list>
+    <app-post
+      *ngFor = "let post of posts"
+      [title]="post.title.rendered"
+      [author]="post.yoast_head_json.author"
+      [date]="post.date"
+      [image]="post.yoast_head_json.og_image[0].url"
+      [content]="post.content.rendered"
+      [id]="post.id" >
+    </app-post>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMorePosts($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

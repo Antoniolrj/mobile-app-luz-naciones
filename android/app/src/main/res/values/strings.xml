@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">app-luz-naciones</string>
+    <string name="title_activity_main">app-luz-naciones</string>
+    <string name="package_name">iglesialuznaciones.es.app</string>
+    <string name="custom_url_scheme">iglesialuznaciones.es.app</string>
+</resources>

@@ -1,0 +1,15 @@
+<div class="post">
+  <h2 class="post-title">{{ title }}</h2>
+  <div class="post-info">
+    <p class="post-author">Autor: {{ author }}</p>
+    <p class="post-date">Fecha: {{ formatDate(date) }}</p>
+    <p class="post-category">Categoría: {{ category }}</p>
+    <img [src]="image" alt="">
+  </div>
+  <div>
+    <ion-nav-link router-direction="forward" [component]="component" [routerLink]="['/post', id]">
+      <ion-button>Ver más</ion-button>
+    </ion-nav-link>
+  </div>
+</div>
+

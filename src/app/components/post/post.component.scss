@@ -1,0 +1,44 @@
+.post {
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: var(--ion-color-medium);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--ion-color-medium-contrast);
+    margin: 25px;
+  
+    .post-title {
+      font-size: 24px;
+      margin: 0;
+    }
+  
+    .post-info {
+      margin-top: 10px;
+  
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+  
+    .post-content {
+      margin-top: 20px;
+  
+      /* Estilos adicionales para el contenido HTML */
+    }
+    img {
+      width: 100%; /* Ancho fijo en píxeles */
+      height: 200px; /* Alto fijo en píxeles */
+      margin-top: 20px; /* Separación superior */
+      margin-bottom: 20px; /* Separación inferior */ 
+      border-radius: 5px;
+ 
+    }
+    .post img {
+      display: block; /* Elimina espacios en línea */
+      margin: 0 auto; /* Centra horizontalmente */
+    }
+  }
+
+  
+

@@ -1,0 +1,24 @@
+  <p *ngIf="menuItem.children; else finalItem">
+    <ion-item
+      (click)="isOpen = !isOpen"
+    >
+    {{ menuItem.title.rendered }}
+    </ion-item>
+
+    <span *ngIf="isOpen">
+      <app-menu-item
+        *ngFor="let item of menuItem.children"
+        [menuItem]="item"
+      ></app-menu-item>
+    </span>
+  </p>
+
+<ng-template #finalItem>
+  <ion-nav-link [routerLink]="menuItem.title.rendered.toLowerCase()" routerDirection="root">
+    <ion-item expand="block"
+                (click)="onMenuItemSelected(menuItem)"
+                (click)="closeMenu()">
+                {{ menuItem.title.rendered }}
+    </ion-item>
+  </ion-nav-link>
+</ng-template>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="postDetails">
+  <div class="post-content">
+    <h2>{{ postDetails.title.rendered }}</h2>
+    <img [src]="postDetails.yoast_head_json.og_image[0].url" alt="">
+    <div [innerHTML]="postDetails.content.rendered"></div>
+  </div>
+</ion-content>

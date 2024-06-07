@@ -1,0 +1,13 @@
+<ion-menu menuId = "main-menu" contentId="main-content">
+  <ion-content>
+    <ion-list id="inbox-list">
+      <ion-list-header>Iglesia Luz Naciones</ion-list-header>
+      <ion-note>hi@ionicframework.com</ion-note>
+          <app-menu-item
+          *ngFor="let menuItem of menuItems"
+          [menuItem]="menuItem"
+          [isRoot]="true">
+        </app-menu-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
